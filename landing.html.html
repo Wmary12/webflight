@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stipjen Aviation | Private Flight</title>
+    <style>
+        :root {
+            --primary: #1a3e72;  /* Deep navy blue */
+            --secondary: #c0a062; /* Gold accent */
+            --whatsapp: #25D366; /* WhatsApp green */
+            --light: #f8f9fa;
+            --dark: #212529;
+            --night-blue: #0a1a30;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header - Night Flight Styling */
+        header {
+            background: linear-gradient(135deg, var(--night-blue) 0%, #020d1a 100%);
+            color: white;
+            padding: 30px 0 25px;
+            text-align: center;
+            border-radius: 0 0 25px 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .private-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-weight: bold;
+            margin-left: 10px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+        }
+        
+        /* Compact Route Display */
+        .route-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0 15px;
+            position: relative;
+        }
+        
+        .airport {
+            text-align: center;
+            padding: 12px 18px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            z-index: 1;
+            width: 120px;
+        }
+        
+        .airport-code {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .airport-name {
+            font-size: 0.75rem;
+            color: #666;
+        }
+        
+        .plane-icon {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: var(--secondary);
+            animation: float 3s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        /* Flight Time Info */
+        .flight-time {
+            text-align: center;
+            margin: 10px 0 20px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
+        /* WhatsApp Confirmation Button (No Logo) */
+        .confirm-btn {
+            display: block;
+            background: var(--whatsapp);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            margin: 15px auto 25px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 90%;
+            max-width: 280px;
+        }
+        
+        .confirm-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        /* Mobile-first boarding pass */
+        .boarding-pass {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-left: 8px solid var(--secondary);
+            margin: 25px 0;
+        }
+        
+        /* Rest of CSS remains the same... */
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 style="font-size: 1.8rem;">Stipjen Aviation <span class="private-badge">Private</span></h1>
+            <p class="subtitle" style="font-size: 1.1rem;">Cincinnati (CVG) ✈ Monterey (MRY)</p>
+            <div class="flight-status" style="font-size: 0.9rem;">
+                <i class="fas fa-circle" style="color: #4CAF50; margin-right: 8px;"></i>
+                Night Flight • June 15, 2025
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Compact Route Display -->
+        <div class="route-display">
+            <div class="airport">
+                <div class="airport-code">CVG</div>
+                <div class="airport-name">Cincinnati</div>
+            </div>
+            <div class="plane-icon">
+                <i class="fas fa-plane"></i>
+            </div>
+            <div class="airport">
+                <div class="airport-code">MRY</div>
+                <div class="airport-name">Monterey</div>
+            </div>
+        </div>
+        
+        <!-- Flight Time Calculation -->
+        <div class="flight-time">
+            <p>Departure: <strong>10:45 PM</strong> (June 15) • Arrival: <strong>01:15 AM</strong> (June 16)</p>
+            <p>≈ 1,950 miles • 3h 45m flight time</p>
+        </div>
+        
+        <!-- WhatsApp Confirmation Button -->
+        <a href="https://wa.me/14808102893?text=Confirm%20my%20participation%20for%20Stipjen%20Aviation%20flight%20VX3125%20(CVG-MRY)%20on%20June%2015%20at%209:45PM" 
+           class="confirm-btn" 
+           target="_blank">
+            Confirm Flight via WhatsApp
+        </a>
+        
+        <!-- Boarding Pass -->
+        <div class="boarding-pass">
+            <h2 style="font-size: 1.3rem; margin-bottom: 15px;"><i class="fas fa-ticket-alt"></i> Boarding Pass</h2>
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <img src="2345mary.jpg" alt="Mary Wallow" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid white; box-shadow: 0 3px 8px rgba(0,0,0,0.1); margin-right: 15px;">
+                <div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 3px;">Mary Cecilia Wallow</h3>
+                    <p style="font-size: 0.8rem; color: #666;">Guest of Hauser Stipjen</p>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div>
+                    <p style="font-size: 0.8rem; color: #777; margin-bottom: 3px;">Flight:</p>
+                    <p style="font-weight: 600;">VX3125 (Private)</p>
+                </div>
+                <div>
+                    <p style="font-size: 0.8rem; color: #777; margin-bottom: 3px;">Aircraft:</p>
+                    <p style="font-weight: 600;">Embraer E175</p>
+                </div>
+                <div>
+                    <p style="font-size: 0.8rem; color: #777; margin-bottom: 3px;">Date:</p>
+                    <p style="font-weight: 600;">June 15, 2025</p>
+                </div>
+                <div>
+                    <p style="font-size: 0.8rem; color: #777; margin-bottom: 3px;">Seat:</p>
+                    <p style="font-weight: 600;">12A (Window)</p>
+                </div>
+                <div>
+                    <p style="font-size: 0.8rem; color: #777; margin-bottom: 3px;">Departs:</p>
+                    <p style="font-weight: 600;">10:45 PM</p>
+                </div>
+                <div>
+                    <p style="font-size: 0.8rem; color: #777; margin-bottom: 3px;">Arrives:</p>
+                    <p style="font-weight: 600;">01:15 AM</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Aircraft Section -->
+        <div style="background: white; border-radius: 12px; padding: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); margin-bottom: 30px;">
+            <h2 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-size: 1.3rem;">
+                <i class="fas fa-plane"></i> Private Aircraft
+            </h2>
+            <img src="plane.jpg" alt="Private Jet" style="width: 100%; border-radius: 8px; margin: 10px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <div style="background: #f8f9fa; padding: 12px; border-radius: 6px; border-left: 3px solid var(--secondary); font-size: 0.9rem; line-height: 1.5;">
+                <p>This Embraer E175 (Tail #N123HS) is privately owned by Hauser Stipjen.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer style="text-align: center; margin-top: 40px; padding: 20px; color: #666; font-size: 0.8rem; border-top: 1px solid #eee;">
+        <p>Stipjen Aviation Private Flight • CVG to MRY • June 15, 2025</p>
+        <p style="margin-top: 5px;">Confirmations: <a href="https://wa.me/14808102893" style="color: var(--primary);">WhatsApp +1 (480) 810-2893</a></p>
+    </footer>
+
+    <script>
+        // Dynamic countdown to flight
+        function updateCountdown() {
+            const now = new Date();
+            const flightTime = new Date('June 15, 2025 21:45:00');
+            const diff = flightTime - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            let countdownText = "Flight today at 9:45 PM";
+            if (days > 0) countdownText = `${days}d ${hours}h until flight`;
+            else if (hours > 0) countdownText = `${hours}h ${mins}m until departure`;
+            
+            document.querySelector('.flight-status').innerHTML = `
+                <i class="fas fa-circle" style="color: #4CAF50; margin-right: 8px;"></i>
+                Night Flight • ${countdownText}
+            `;
+        }
+        setInterval(updateCountdown, 60000);
+        updateCountdown();
+    </script>
+</body>
+</html>
